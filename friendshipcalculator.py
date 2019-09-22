@@ -2,21 +2,25 @@ import random
 import string
 
 
-friend_list = ["danyal","shahbaz","arsalan","chaudary","akhter","adeen","shanza","abdullah","abdal","fashi"]
-score = 0
+friend_list = ["danyal","shahbaz","arsalan","chaudary","akhter","adeen","shanza","abdullah","abdal","fashi","hassan","abdal",
+"abdullah","ali","naqvi"]
 
-random_string = ''.join(random.choices(string.ascii_lowercase, k = 3))
 
+random_string = ''.join(random.choices(string.ascii_lowercase, k = 6))
+print(random_string)
 for name in friend_list:
+    score = 0
     for test_friendship in name:
         if test_friendship in "best":
-            score += 10
+            score += 25
         if test_friendship in "average":
-            score += 5
+            score += 15
         if test_friendship in "worst":
-            score += -15
+            score += -5
+        if test_friendship in "enemy":
+            score += -10
         if test_friendship in random_string:
-            score += 20
+            score += 25
         else:
             score += 0
     if score >= 80:

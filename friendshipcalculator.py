@@ -5,7 +5,7 @@ import string
 friend_list = ["danyal","shahbaz","arsalan","chaudary","akhter","adeen","shanza","abdullah","abdal","fashi"]
 score = 0
 
-
+random_string = ''.join(random.choices(string.ascii_lowercase, k = 3))
 
 for name in friend_list:
     for test_friendship in name:
@@ -15,6 +15,8 @@ for name in friend_list:
             score += 5
         if test_friendship in "worst":
             score += -15
+        if test_friendship in random_string:
+            score += 20
         else:
             score += 0
     if score >= 80:
